@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki de MCreator Web Lite Modular - Guía para Mods</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
+        header { background: #1e3a5f; color: white; padding: 1.5em; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+        nav { background: #3a6ea5; padding: 0.8em; text-align: center; }
+        nav a { color: white; margin: 0 1.2em; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 1200px; margin: 2em auto; padding: 1em; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        section { margin-bottom: 3em; padding: 1.5em; border-left: 5px solid #3a6ea5; background: #fafafa; border-radius: 8px; }
+        h2 { color: #1e3a5f; border-bottom: 2px solid #3a6ea5; padding-bottom: 0.5em; }
+        h3 { color: #3a6ea5; }
+        code { background: #f0f0f0; padding: 0.2em 0.4em; border-radius: 4px; font-family: monospace; }
+        a { color: #3a6ea5; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .tip { background: #e6f2ff; padding: 1.2em; border-radius: 8px; margin: 1.5em 0; border-left: 5px solid #3a6ea5; }
+        ul { padding-left: 1.5em; }
+        footer { text-align: center; padding: 1.5em; background: #1e3a5f; color: white; margin-top: 3em; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Wiki de MCreator Web Lite Modular</h1>
+    <p>Guía oficial para crear mods de Minecraft (Forge/Fabric) desde el navegador. Todo explicado con enlaces a recursos de modding.</p>
+</header>
+
+<nav>
+    <a href="#intro">Introducción</a>
+    <a href="#blocks">Bloques</a>
+    <a href="#items">Items</a>
+    <a href="#mobs">Mobs</a>
+    <a href="#gui">GUI</a>
+    <a href="#commands">Comandos</a>
+    <a href="#armor">Armaduras</a>
+    <a href="#export">Exportar</a>
+    <a href="#recursos">Recursos</a>
+</nav>
+
+<main>
+
+    <section id="intro">
+        <h2>Introducción</h2>
+        <p><strong>MCreator Web Lite Modular</strong> es una herramienta web gratuita que te permite diseñar elementos de mods para Minecraft directamente en el navegador (PC, tablet o móvil).</p>
+        <p>Creas bloques, items, mobs, armaduras, GUI y comandos, subes texturas y al final exportas un ZIP con archivos JSON descriptivos + tus imágenes.</p>
+        <p>Estos archivos están pensados para:</p>
+        <ul>
+            <li>Importar directamente en el <strong>MCreator oficial</strong> (desktop) para generar el mod completo.</li>
+            <li>Servir de base o referencia al programar mods en <strong>Forge</strong> o <strong>Fabric</strong>.</li>
+            <li>Ayudar a planificar tu mod antes de codificar.</li>
+        </ul>
+        <p class="tip">Esta herramienta es ideal para prototipar rápido ideas de mods sin instalar nada.</p>
+    </section>
+
+    <section id="blocks">
+        <h2>Bloques</h2>
+        <p>Crea bloques personalizados para tu mod.</p>
+        <ul>
+            <li><strong>Nombre:</strong> Identificador del bloque (ej: <code>mi_bloque_epico</code>).</li>
+            <li><strong>Dureza y resistencia:</strong> Define cuánto tarda en romperse y resistencia a explosiones.</li>
+            <li><strong>Textura:</strong> Sube PNG (16×16 recomendado).</li>
+        </ul>
+        <p>El JSON generado te sirve como referencia para registrar el bloque en MCreator o en código Forge/Fabric.</p>
+    </section>
+
+    <section id="items">
+        <h2>Items y Espadas</h2>
+        <p>Crea items, herramientas o espadas con propiedades especiales.</p>
+        <ul>
+            <li><strong>Daño y stack:</strong> Configuración básica.</li>
+            <li><strong>Proyectil:</strong> Al hacer click derecho lanza flechas, bolas de fuego, etc.</li>
+            <li><strong>Evento de tecla:</strong> Describe efectos al presionar una tecla con el item equipado.</li>
+        </ul>
+        <p>Perfecto para items únicos en tu mod.</p>
+    </section>
+
+    <section id="mobs">
+        <h2>Mobs</h2>
+        <p>Crea entidades vivientes para tu mod.</p>
+        <ul>
+            <li><strong>Vida, daño, velocidad:</strong> Estadísticas básicas.</li>
+            <li><strong>Vuelo:</strong> Como abeja, ghast o phantom.</li>
+            <li><strong>Efectos al atacar:</strong> Veneno, wither, etc.</li>
+            <li><strong>Modelo:</strong> Sube texturas o archivos de modelo.</li>
+        </ul>
+        <p>El JSON te ayuda a definir la entidad en MCreator o código.</p>
+    </section>
+
+    <section id="gui">
+        <h2>GUI (Interfaces)</h2>
+        <p>Crea menús e inventarios personalizados.</p>
+        <ul>
+            <li><strong>Slots y tipo:</strong> Inventario, horno, mesa de crafteo, etc.</li>
+            <li><strong>Eventos:</strong> Qué pasa al abrir o hacer click.</li>
+            <li><strong>Imagen:</strong> Fondo personalizado.</li>
+        </ul>
+        <p>Ideal para bloques con interfaz (ej: máquinas).</p>
+    </section>
+
+    <section id="commands">
+        <h2>Comandos Personalizados</h2>
+        <p>Define comandos que tu mod registrará (ej: <code>/volar</code>, <code>/daritem</code>).</p>
+        <ul>
+            <li><strong>Nombre:</strong> Sin "/" (se convierte en comando real).</li>
+            <li><strong>Permiso:</strong> Quién puede usarlo.</li>
+            <li><strong>Argumentos (parte complicada):</strong> Define parámetros obligatorios u opcionales.<br>
+                Ejemplos: <code>&lt;jugador&gt;</code>, <code>&lt;cantidad: integer&gt;</code>.<br>
+                Guía: <a href="https://mcreator.net/wiki/command-arguments" target="_blank">Argumentos en MCreator</a>.
+            </li>
+            <li><strong>Acción:</strong> Código que ejecuta el comando (puedes poner varios comandos separados por líneas).</li>
+        </ul>
+        <p>En MCreator oficial estos comandos se registran automáticamente.</p>
+    </section>
+
+    <section id="armor">
+        <h2>Armaduras</h2>
+        <p>Crea sets de armadura con efectos y bonos.</p>
+        <ul>
+            <li><strong>Efectos por pieza:</strong> Ej: velocidad con botas.</li>
+            <li><strong>Bonus por set completo:</strong> Ej: vuelo o regeneración.</li>
+            <li><strong>Textura:</strong> Formato estándar de armadura.</li>
+        </ul>
+    </section>
+
+    <section id="export">
+        <h2>Exportar el Mod</h2>
+        <p>En la pestaña Exportar:</p>
+        <ul>
+            <li>Selecciona versión de Minecraft y modloader (Forge o Fabric).</li>
+            <li>Haz click en "Exportar y Descargar Mod".</li>
+            <li>Obtienes un ZIP con todos los JSON y texturas.</li>
+        </ul>
+        <p>Luego abre el ZIP en el <strong>MCreator oficial</strong> (descárgalo en <a href="https://mcreator.net/" target="_blank">mcreator.net</a>) e importa los elementos para generar el mod .jar real.</p>
+        <p class="tip">En móvil (iOS): mantén presionado el botón de descarga → "Guardar en Archivos".</p>
+    </section>
+
+    <section id="recursos">
+        <h2>Recursos y Enlaces Útiles</h2>
+        <ul>
+            <li><strong>MCreator Oficial:</strong> <a href="https://mcreator.net/" target="_blank">mcreator.net</a> (para generar el mod final).</li>
+            <li><strong>Wiki de MCreator:</strong> <a href="https://mcreator.net/wiki" target="_blank">mcreator.net/wiki</a> (tutoriales detallados).</li>
+            <li><strong>Forge Docs:</strong> <a href="https://docs.minecraftforge.net/" target="_blank">docs.minecraftforge.net</a></li>
+            <li><strong>Fabric Wiki:</strong> <a href="https://fabricmc.net/wiki/" target="_blank">fabricmc.net/wiki</a></li>
+            <li><strong>Minecraft Wiki (referencia técnica):</strong> <a href="https://minecraft.wiki/" target="_blank">minecraft.wiki</a></li>
+        </ul>
+        <p class="tip">La mejor forma de terminar tu mod es usar MCreator desktop con los JSON que exportas aquí.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Wiki de MCreator Web Lite Modular • Diciembre 2025</p>
+    <p>¡Crea mods increíbles desde cualquier dispositivo! 🚀</p>
+</footer>
+
+</body>
+</html>
